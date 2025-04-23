@@ -30,7 +30,6 @@
         {
             LblName = new Label();
             TxtName = new TextBox();
-            TxtAge = new TextBox();
             LblAge = new Label();
             LblGender = new Label();
             RdoMale = new RadioButton();
@@ -38,6 +37,7 @@
             BtnOk = new Button();
             TxtResult = new TextBox();
             LblResult = new Label();
+            TxtAge = new MaskedTextBox();
             SuspendLayout();
             // 
             // LblName
@@ -55,13 +55,6 @@
             TxtName.Name = "TxtName";
             TxtName.Size = new Size(128, 23);
             TxtName.TabIndex = 1;
-            // 
-            // TxtAge
-            // 
-            TxtAge.Location = new Point(74, 41);
-            TxtAge.Name = "TxtAge";
-            TxtAge.Size = new Size(128, 23);
-            TxtAge.TabIndex = 3;
             // 
             // LblAge
             // 
@@ -88,7 +81,7 @@
             RdoMale.Location = new Point(85, 70);
             RdoMale.Name = "RdoMale";
             RdoMale.Size = new Size(49, 19);
-            RdoMale.TabIndex = 5;
+            RdoMale.TabIndex = 3;
             RdoMale.TabStop = true;
             RdoMale.Text = "남성";
             RdoMale.UseVisualStyleBackColor = true;
@@ -99,7 +92,7 @@
             RdoFemale.Location = new Point(141, 70);
             RdoFemale.Name = "RdoFemale";
             RdoFemale.Size = new Size(49, 19);
-            RdoFemale.TabIndex = 6;
+            RdoFemale.TabIndex = 4;
             RdoFemale.Text = "여성";
             RdoFemale.UseVisualStyleBackColor = true;
             // 
@@ -108,17 +101,18 @@
             BtnOk.Location = new Point(688, 398);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(100, 40);
-            BtnOk.TabIndex = 7;
+            BtnOk.TabIndex = 6;
             BtnOk.Text = "확인";
             BtnOk.UseVisualStyleBackColor = true;
             BtnOk.Click += BtnOk_Click;
             // 
             // TxtResult
             // 
+            TxtResult.Enabled = false;
             TxtResult.Location = new Point(74, 174);
             TxtResult.Name = "TxtResult";
             TxtResult.Size = new Size(714, 23);
-            TxtResult.TabIndex = 9;
+            TxtResult.TabIndex = 5;
             // 
             // LblResult
             // 
@@ -129,18 +123,26 @@
             LblResult.TabIndex = 8;
             LblResult.Text = "      결과";
             // 
+            // TxtAge
+            // 
+            TxtAge.Location = new Point(74, 41);
+            TxtAge.Mask = "0000-00-00";
+            TxtAge.Name = "TxtAge";
+            TxtAge.Size = new Size(128, 23);
+            TxtAge.TabIndex = 2;
+            // 
             // Frm4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(TxtAge);
             Controls.Add(TxtResult);
             Controls.Add(LblResult);
             Controls.Add(BtnOk);
             Controls.Add(RdoFemale);
             Controls.Add(RdoMale);
             Controls.Add(LblGender);
-            Controls.Add(TxtAge);
             Controls.Add(LblAge);
             Controls.Add(TxtName);
             Controls.Add(LblName);
@@ -155,7 +157,6 @@
 
         private Label LblName;
         private TextBox TxtName;
-        private TextBox TxtAge;
         private Label LblAge;
         private Label LblGender;
         private RadioButton RdoMale;
@@ -163,5 +164,6 @@
         private Button BtnOk;
         private TextBox TxtResult;
         private Label LblResult;
+        private MaskedTextBox TxtAge;
     }
 }
