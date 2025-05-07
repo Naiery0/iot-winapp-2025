@@ -1,0 +1,48 @@
+﻿<ui:FluentWindow x:Class="WpfStudyApp06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:local="clr-namespace:WpfStudyApp06"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600">
+    <Grid>
+        <ui:TitleBar Title="WPF UI"></ui:TitleBar>
+
+        <Grid Margin="0 32 0 0">
+            <!--실제 작업영역-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="Control">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="21*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="이름 : " Margin="2,2,2,2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <ui:TextBox Grid.Row="0" Grid.Column="1" Margin="3,3,3,3"></ui:TextBox>
+                    <Label Grid.Row="1" Grid.Column="0" Content="성별 : " Margin="2,2,2,2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" 
+                                Grid.RowSpan="3"
+                                Orientation="Vertical" Cursor="" Margin="0,0,0,34">
+                        <RadioButton Content="남자" IsChecked="True" Margin="3" Cursor="Hand"></RadioButton>
+                        <RadioButton Content="여자" IsChecked="False" Margin="3"></RadioButton>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</ui:FluentWindow>
